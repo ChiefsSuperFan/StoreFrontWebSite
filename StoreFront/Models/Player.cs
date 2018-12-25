@@ -17,6 +17,14 @@ namespace StoreFront.Models
         public int TeamID { get; set; }
         public string TeamName { get; set; }
 
+        public string FullName
+        {
+            get
+            {
+                return FirstName + ' ' + LastName;
+            }
+        }
+
 
     }
 }

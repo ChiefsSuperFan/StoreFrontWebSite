@@ -13,8 +13,7 @@
     <thead>
         <tr>
             <th scope="col">Team</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
+            <th scope="col">Name</th>
             <th scope="col">Position</th>
 
 
@@ -26,9 +25,8 @@
         @foreach(StoreFront.Models.Player player in Model)
         {
         <tr>
-            <td>@player.TeamName</td>
-            <td>@player.FirstName</td>
-            <td>@player.LastName</td>
+            <td>@Html.ActionLink(player.FullName, "Details", "Players", new {PlayerID = player.PlayerID},null)</td>
+            <td>@player.FullName</td>
             <td>@player.PlayerPosition</td>
         </tr>
         }

@@ -22,5 +22,18 @@ namespace StoreFront.Controllers
            
             return View(players);
         }
+
+        public async Task<ActionResult> Details(int? PlayerID)
+        {
+            DAPlayers daPlayers = new DAPlayers();
+
+            IEnumerable<Player> players = await daPlayers.GetPlayers();
+
+            Player player = players.SingleOrDefault(p => p.PlayerID == PlayerID);
+
+            return View(player);
+
+
+        }
     }
 }
